@@ -11,18 +11,6 @@ using ITMO.ASPCourse.MVC.ExamTask.Models;
 
 namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
 {
-    public enum SelectSubject
-    {
-        Math = 1,
-        Biology = 2,
-        English = 3,
-        Physics = 4,
-        Chemistry = 5,
-        Geography = 6,
-        History = 7,
-        [Display (Name = "Information Technologies")]
-        InfoTechnologies = 8,
-    }
     public class ScoresController : Controller
     {
         private SchoolDataEntities1 db = new SchoolDataEntities1();
