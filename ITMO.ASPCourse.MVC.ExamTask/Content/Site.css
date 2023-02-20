@@ -1,12 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-image: url('imageAbs.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -28,7 +20,6 @@ textarea {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: ;
     border-color: #fff; 
     column-rule-color:aliceblue;
     
