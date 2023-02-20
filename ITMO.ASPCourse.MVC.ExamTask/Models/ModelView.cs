@@ -13,6 +13,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
         [Required(ErrorMessage ="Enter name")]
         public string StudentName { get; set; }
         [Required(ErrorMessage ="Enter Group number")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage ="Must be digits")]
         public int GroupNo { get; set; }
         [Required(ErrorMessage = "Enter Email address")]
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -23,8 +24,11 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
     }
     public class ScoreMetadata
     {
+        [Required(ErrorMessage ="Enter Score Result")]
         [Range(0,100)]
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Only Digits")]
         public Nullable<int> ScoreResult { get; set; }
+        [Required(ErrorMessage ="Enter date as follows")]
+        public Nullable<System.DateTime> ScoreDate { get; set; }
     }
 }

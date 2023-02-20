@@ -155,6 +155,7 @@
     <Compile Include="Models\Score.cs">
       <DependentUpon>SchoolEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SelectSubject.cs" />
     <Compile Include="Models\Student.cs">
       <DependentUpon>SchoolEntityModel.tt</DependentUpon>
     </Compile>

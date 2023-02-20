@@ -37,6 +37,8 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
 
         public ActionResult Create()
         {
+            var list = new List<string>() { "Math", "Biology", "English", "Physics", "Chemistry", "Geography", "History", "Info Technologies" };
+            ViewBag.list = list;
             ViewBag.StudentID = new SelectList(db.Students, "ID", "StudentName");
             return View();
         }
