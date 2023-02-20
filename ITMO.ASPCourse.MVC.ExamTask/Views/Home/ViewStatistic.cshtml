@@ -1,0 +1,81 @@
+﻿@model ITMO.ASPCourse.MVC.ExamTask.Models.GroupedScoreData
+
+@{
+    ViewBag.Title = "ViewStatistic";
+}
+
+<h3 style="color:blueviolet">Student Total Scores</h3>
+<table class="table">
+    <tr>
+        <td style="width:160px">
+            <table style: width="280">
+                <thead>
+                    <tr style="color: firebrick">
+                        <th scope="col">StudentID</th>
+                        <th scope="col" style="width:130px">Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <th scope="row">@Html.DisplayFor(a => item.StudentID)</th>
+                            <th scope="row">@Html.DisplayFor(a => item.TotalScore)</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <thead>
+                    <tr style="color: firebrick">
+                        <th scope="col">Student Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in ViewBag.Students)
+            {
+                <tr>
+                    <th scope="row">@s.StudentName</th>
+                </tr>
+            }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+<h3 style="color:blueviolet">TOP 5 Scores</h3>
+
+<table class="table">
+    <tr>
+        <td style="width:280px">
+            <h4 style="color:darkslategrey">TOP 5 Worst Scores</h4>
+            <table style="border: 5px solid blueviolet">
+                <thead>
+                    <tr style="color:firebrick">
+                        <th scope="col">StudentID</th>
+                        <th scope="col">Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @Html.Action("ViewStatistic1")
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <h4 style="color:goldenrod">TOP 5 Best Scores</h4>
+            <table style="border: 5px solid blueviolet">
+                <thead>
+                    <tr style="color: firebrick">
+                        <th scope="col">StudentID</th>
+                        <th scope="col">Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @Html.Action("ViewStatistic2")
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>

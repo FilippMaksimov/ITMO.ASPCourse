@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ITMO.ASPCourse.MVC.ExamTask.Models.Score>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ScoreResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScoreDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.StudentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScoreResult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScoreDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.StudentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ScoreID  }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ScoreID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ScoreID  })
+        </td>
+    </tr>
+}
+
+</table>

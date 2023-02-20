@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ITMO.ASPCourse.Web.AllLabs", "ITMO.ASPCourse.Web.AllLabs\", "{B28FF850-6BA7-4C16-8260-BF81CAE425C0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54009"
+		Debug.AspNetCompiler.PhysicalPath = "ITMO.ASPCourse.Web.AllLabs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54009\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54009"
+		Release.AspNetCompiler.PhysicalPath = "ITMO.ASPCourse.Web.AllLabs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54009\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54009"
+		SlnRelativePath = "ITMO.ASPCourse.Web.AllLabs\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCource.MVC.Lab01", "ITMO.ASPCource.MVC.Lab01\ITMO.ASPCource.MVC.Lab01.csproj", "{E6603FF3-D16B-4B39-816D-6D1DCF3F5412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab02.Ex01", "ITMO.ASPCourse.MVC.Lab02.Ex01\ITMO.ASPCourse.MVC.Lab02.Ex01.csproj", "{1E9939B0-EA1B-47C2-A377-6829849DCEBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab02.Ex02", "ITMO.ASPCourse.MVC.Lab02.Ex02\ITMO.ASPCourse.MVC.Lab02.Ex02.csproj", "{84C6FD02-34AB-4A89-8AC8-3ECEDC1B6E62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab02.Ex03", "ITMO.ASPCourse.MVC.Lab02.Ex03\ITMO.ASPCourse.MVC.Lab02.Ex03.csproj", "{814FC8C0-C582-40A5-9796-25F1F8E712D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab02.Ex04", "ITMO.ASPCourse.MVC.Lab02.Ex04\ITMO.ASPCourse.MVC.Lab02.Ex04.csproj", "{67B986B7-2D50-42EF-9364-E873A8B91FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab02.Ex05", "ITMO.ASPCourse.MVC.Lab02.Ex05\ITMO.ASPCourse.MVC.Lab02.Ex05.csproj", "{678D2057-A33F-4476-B784-190B517BA75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab03.Lab04", "ITMO.ASPCourse.MVC.Lab03.Lab04.Lab05.Lab06.Lab08\ITMO.ASPCourse.MVC.Lab03.Lab04.csproj", "{B8EE573D-734C-4CCE-BC2E-C25B9126B911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.Lab05.Lab06.Lab07", "ITMO.ASPCourse.MVC.Lab05.Lab06.Lab08\ITMO.ASPCourse.MVC.Lab05.Lab06.Lab07.csproj", "{E6CEE549-5989-46EF-8EFA-6CB7217AC4AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ASPCourse.MVC.ExamTask", "ITMO.ASPCourse.MVC.ExamTask\ITMO.ASPCourse.MVC.ExamTask.csproj", "{E949901E-B869-42D7-B770-1E7648834EAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B28FF850-6BA7-4C16-8260-BF81CAE425C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28FF850-6BA7-4C16-8260-BF81CAE425C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28FF850-6BA7-4C16-8260-BF81CAE425C0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28FF850-6BA7-4C16-8260-BF81CAE425C0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E6603FF3-D16B-4B39-816D-6D1DCF3F5412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6603FF3-D16B-4B39-816D-6D1DCF3F5412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6603FF3-D16B-4B39-816D-6D1DCF3F5412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6603FF3-D16B-4B39-816D-6D1DCF3F5412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E9939B0-EA1B-47C2-A377-6829849DCEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9939B0-EA1B-47C2-A377-6829849DCEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9939B0-EA1B-47C2-A377-6829849DCEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9939B0-EA1B-47C2-A377-6829849DCEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C6FD02-34AB-4A89-8AC8-3ECEDC1B6E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C6FD02-34AB-4A89-8AC8-3ECEDC1B6E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C6FD02-34AB-4A89-8AC8-3ECEDC1B6E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C6FD02-34AB-4A89-8AC8-3ECEDC1B6E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{814FC8C0-C582-40A5-9796-25F1F8E712D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814FC8C0-C582-40A5-9796-25F1F8E712D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814FC8C0-C582-40A5-9796-25F1F8E712D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814FC8C0-C582-40A5-9796-25F1F8E712D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B986B7-2D50-42EF-9364-E873A8B91FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B986B7-2D50-42EF-9364-E873A8B91FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B986B7-2D50-42EF-9364-E873A8B91FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B986B7-2D50-42EF-9364-E873A8B91FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678D2057-A33F-4476-B784-190B517BA75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678D2057-A33F-4476-B784-190B517BA75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678D2057-A33F-4476-B784-190B517BA75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678D2057-A33F-4476-B784-190B517BA75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8EE573D-734C-4CCE-BC2E-C25B9126B911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8EE573D-734C-4CCE-BC2E-C25B9126B911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8EE573D-734C-4CCE-BC2E-C25B9126B911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8EE573D-734C-4CCE-BC2E-C25B9126B911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6CEE549-5989-46EF-8EFA-6CB7217AC4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6CEE549-5989-46EF-8EFA-6CB7217AC4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6CEE549-5989-46EF-8EFA-6CB7217AC4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6CEE549-5989-46EF-8EFA-6CB7217AC4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E949901E-B869-42D7-B770-1E7648834EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E949901E-B869-42D7-B770-1E7648834EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E949901E-B869-42D7-B770-1E7648834EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E949901E-B869-42D7-B770-1E7648834EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0EA2148-CC19-4EF6-B854-C085B4FC965F}
+	EndGlobalSection
+EndGlobal

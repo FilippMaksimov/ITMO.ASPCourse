@@ -1,0 +1,9 @@
+﻿@model ITMO.ASPCourse.MVC.ExamTask.Models.GroupedScoreData
+
+@foreach (var item in Model.Items)
+{
+    <tr>
+        <th scope="row" style="width:80px">@Html.DisplayFor(b => item.StudentID)</th>
+        <th scope="row">@Html.DisplayFor(b => item.TotalScore) </th>
+    </tr>
+}

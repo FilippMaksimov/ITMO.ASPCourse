@@ -1,0 +1,22 @@
+﻿@model ITMO.ASPCourse.MVC.ExamTask.Models.Student
+
+<h2>Add a new student</h2>
+    @using (Html.BeginForm("Create", "Students", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.StudentName, new { @class = "form-control", @placeholder = "Name" })
+        @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "error" })
+        <p></p>
+        @Html.TextBoxFor(model => model.GroupNo, new { @class = "form-control", @placeholder = "Group Number" })
+        @Html.ValidationMessageFor(model => model.GroupNo, "", new { @class = "error" })
+        <p></p>
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email address" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "error" })
+        <div>
+            <p></p>
+            <input type="submit" value="Submit" class="btn btn-block btn-primary" />
+        </div>
+    }
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
