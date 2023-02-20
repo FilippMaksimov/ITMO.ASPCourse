@@ -1,5 +1,5 @@
 ﻿@model ITMO.ASPCourse.MVC.ExamTask.Models.Student
-<form id="myForm">
+
 <h2>Add a new student</h2>
     @using (Html.BeginForm("Create", "Students", FormMethod.Post))
     {
@@ -16,7 +16,7 @@
             <input type="submit" value="Submit" class="btn btn-block btn-primary" />
         </div>
     }
-</form>
+
 <script>
     var EnterName = function () {
         debugger
