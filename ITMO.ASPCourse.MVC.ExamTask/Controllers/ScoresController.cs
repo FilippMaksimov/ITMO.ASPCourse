@@ -12,14 +12,16 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
 {
     public class ScoresController : Controller
     {
-        private SchoolDataEntities db = new SchoolDataEntities();
+        private SchoolDataEntities1 db = new SchoolDataEntities1();
 
+        // GET: Scores
         public ActionResult Index()
         {
             var scores = db.Scores.Include(s => s.Student);
             return View(scores.ToList());
         }
 
+        // GET: Scores/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,12 +36,16 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             return View(score);
         }
 
+        // GET: Scores/Create
         public ActionResult Create()
         {
             ViewBag.StudentID = new SelectList(db.Students, "ID", "StudentName");
             return View();
         }
 
+        // POST: Scores/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ScoreID,StudentID,SubjectName,ScoreResult,ScoreDate")] Score score)
@@ -55,6 +61,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             return View(score);
         }
 
+        // GET: Scores/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -70,6 +77,9 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             return View(score);
         }
 
+        // POST: Scores/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ScoreID,StudentID,SubjectName,ScoreResult,ScoreDate")] Score score)
@@ -84,6 +94,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             return View(score);
         }
 
+        // GET: Scores/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -98,6 +109,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             return View(score);
         }
 
+        // POST: Scores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

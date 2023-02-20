@@ -5,13 +5,9 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="SchoolDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITMO.ASPCOURSE.MVC.EXAMTASK\APP_DATA\SCHOOLDATA.MDF.dbo.Scores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Scores">
           <Key>
             <PropertyRef Name="ScoreID" />
-            <PropertyRef Name="StudentID" />
-            <PropertyRef Name="SubjectName" />
           </Key>
           <Property Name="ScoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StudentID" Type="int" Nullable="false" />
@@ -41,16 +37,8 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SchoolDataModelStoreContainer">
+          <EntitySet Name="Scores" EntityType="Self.Scores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Scores" EntityType="Self.Scores" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Scores].[ScoreID] AS [ScoreID], 
-    [Scores].[StudentID] AS [StudentID], 
-    [Scores].[SubjectName] AS [SubjectName], 
-    [Scores].[ScoreResult] AS [ScoreResult], 
-    [Scores].[ScoreDate] AS [ScoreDate]
-    FROM [dbo].[Scores] AS [Scores]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_T_StudentID" Association="Self.FK_T_StudentID">
             <End Role="Students" EntitySet="Students" />
             <End Role="Scores" EntitySet="Scores" />
@@ -61,6 +49,17 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchoolDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ScoreResult" Type="Int32" />
+          <Property Name="ScoreDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_T_StudentID" FromRole="Scores" ToRole="Students" />
+        </EntityType>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="ID" />
@@ -70,19 +69,6 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
           <Property Name="GroupNo" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Scores" Relationship="Self.FK_T_StudentID" FromRole="Students" ToRole="Scores" />
-        </EntityType>
-        <EntityType Name="Score">
-          <Key>
-            <PropertyRef Name="ScoreID" />
-            <PropertyRef Name="StudentID" />
-            <PropertyRef Name="SubjectName" />
-          </Key>
-          <Property Name="ScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="SubjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ScoreResult" Type="Int32" />
-          <Property Name="ScoreDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_T_StudentID" FromRole="Scores" ToRole="Students" />
         </EntityType>
         <Association Name="FK_T_StudentID">
           <End Role="Students" Type="Self.Student" Multiplicity="1" />
@@ -96,9 +82,9 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SchoolDataEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Students" EntityType="Self.Student" />
+        <EntityContainer Name="SchoolDataEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Scores" EntityType="Self.Score" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
           <AssociationSet Name="FK_T_StudentID" Association="Self.FK_T_StudentID">
             <End Role="Students" EntitySet="Students" />
             <End Role="Scores" EntitySet="Scores" />
@@ -109,17 +95,7 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolDataModelStoreContainer" CdmEntityContainer="SchoolDataEntities">
-          <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="SchoolDataModel.Student">
-              <MappingFragment StoreEntitySet="Students">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
-                <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="SchoolDataModelStoreContainer" CdmEntityContainer="SchoolDataEntities1">
           <EntitySetMapping Name="Scores">
             <EntityTypeMapping TypeName="SchoolDataModel.Score">
               <MappingFragment StoreEntitySet="Scores">
@@ -128,6 +104,16 @@ warning 6002: The table/view 'C:\USERS\FILMA\ONEDRIVE\DESKTOP\ITMO.ASPCOURSE\ITM
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
                 <ScalarProperty Name="ScoreResult" ColumnName="ScoreResult" />
                 <ScalarProperty Name="ScoreDate" ColumnName="ScoreDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="SchoolDataModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

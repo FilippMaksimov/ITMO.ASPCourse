@@ -12,7 +12,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
 {
     public class StudentsController : Controller
     {
-        private SchoolDataEntities db = new SchoolDataEntities();
+        private SchoolDataEntities1 db = new SchoolDataEntities1();
 
         public ActionResult Index()
         {

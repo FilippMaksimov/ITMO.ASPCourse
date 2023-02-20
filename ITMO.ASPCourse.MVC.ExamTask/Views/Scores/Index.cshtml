@@ -13,6 +13,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ScoreResult)
         </th>
         <th>
@@ -27,6 +30,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.SubjectName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ScoreResult)
         </td>
         <td>
@@ -36,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Student.StudentName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ScoreID  }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ScoreID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ScoreID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScoreID  })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ScoreID })
         </td>
     </tr>
 }

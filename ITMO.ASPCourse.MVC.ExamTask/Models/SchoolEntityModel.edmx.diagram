@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="998a43a016164d2e8df77a2d2fbcbc27" Name="Diagram1">
-        <EntityTypeShape EntityType="SchoolDataModel.Student" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="4d4b8b1c78724e7a82f788ab262bd850" Name="Diagram1">
         <EntityTypeShape EntityType="SchoolDataModel.Score" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDataModel.Student" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SchoolDataModel.FK_T_StudentID" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

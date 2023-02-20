@@ -18,7 +18,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
         {
             return View();
         }
-        SchoolDataEntities db = new SchoolDataEntities();
+        SchoolDataEntities1 db = new SchoolDataEntities1();
 
         [HttpGet]
         public ActionResult ViewStatistic()

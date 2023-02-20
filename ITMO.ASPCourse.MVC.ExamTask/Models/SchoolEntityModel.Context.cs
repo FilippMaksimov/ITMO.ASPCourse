@@ -13,10 +13,10 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SchoolDataEntities : DbContext
+    public partial class SchoolDataEntities1 : DbContext
     {
-        public SchoolDataEntities()
-            : base("name=SchoolDataEntities")
+        public SchoolDataEntities1()
+            : base("name=SchoolDataEntities1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Score> Scores { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }
