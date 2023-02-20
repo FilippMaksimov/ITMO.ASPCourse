@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ITMO.ASPCourse.MVC.ExamTask/App_Data/SchoolData_log.ldf
