@@ -34,12 +34,16 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
             }
             return View(score);
         }
-
-        public ActionResult Create()
+        public void GetList()
         {
             var list = new List<string>() { "Math", "Biology", "English", "Physics", "Chemistry", "Geography", "History", "Info Technologies" };
             ViewBag.list = list;
             ViewBag.StudentID = new SelectList(db.Students, "ID", "StudentName");
+        }
+
+        public ActionResult Create()
+        {
+            GetList();
             return View();
         }
 
@@ -60,6 +64,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
 
         public ActionResult Edit(int? id)
         {
+            GetList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -77,6 +82,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ScoreID,StudentID,SubjectName,ScoreResult,ScoreDate")] Score score)
         {
+            GetList();
             if (ModelState.IsValid)
             {
                 db.Entry(score).State = EntityState.Modified;
