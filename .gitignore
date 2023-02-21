@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /ITMO.ASPCourse.MVC.ExamTask/App_Data/SchoolData_log.ldf
 /ITMO.ASPCourse.MVC.ExamTask/App_Data/SchoolData_log.ldf
+/ITMO.ASPCourse.MVC.ExamTask/App_Data/SchoolData.mdf
