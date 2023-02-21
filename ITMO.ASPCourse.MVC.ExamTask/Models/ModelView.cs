@@ -11,6 +11,9 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
     {
         //Attributes for student table
         [Required(ErrorMessage ="Enter name")]
+
+        [RegularExpression(@"^[A-Z][a-z]*\s[A-Z][a-z]*", ErrorMessage ="Incorect Format. Name and Surename must start with big letters and this field must not containt digits")]
+        [StringLength(40, ErrorMessage = "Too long format")]
         public string StudentName { get; set; }
         [Required(ErrorMessage ="Enter Group number")]
         [RegularExpression(@"^[0-9]*$", ErrorMessage ="Must be digits")]
@@ -29,6 +32,7 @@ namespace ITMO.ASPCourse.MVC.ExamTask.Models
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Only Digits")]
         public Nullable<int> ScoreResult { get; set; }
         [Required(ErrorMessage ="Enter date as follows")]
+        [DataType(DataType.Date, ErrorMessage ="Must be date format")]
         public Nullable<System.DateTime> ScoreDate { get; set; }
     }
 }
