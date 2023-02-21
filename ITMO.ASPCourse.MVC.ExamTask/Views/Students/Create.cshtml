@@ -1,6 +1,7 @@
 ﻿@model ITMO.ASPCourse.MVC.ExamTask.Models.Student
 
 <h2>Add a new student</h2>
+<p style="color:blueviolet">Notice: USE ONLY LATIN LETTERS!</p>
     @using (Html.BeginForm("Create", "Students", FormMethod.Post))
     {
         @Html.TextBoxFor(model => model.StudentName, new { @class = "form-control", @placeholder = "Name" })
